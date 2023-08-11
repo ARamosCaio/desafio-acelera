@@ -1,3 +1,4 @@
+from num2words import num2words
 import platform
 import os
 import time
@@ -17,14 +18,16 @@ def lyrics(sentence):
 
 def song(n, ni):
     clean_verse()
+    num = num2words(n, lang='pt_BR').capitalize()
+    numi = num2words(ni, lang='pt_BR')
     if n == 0:
-        sentence = (f'A mamãe patinha foi procurar\nAlém das montanhas\nNa beira do mar\nA mamãe gritou: Quá, quá, quá, quá\nE os {ni} patinhos voltaram de lá')
+        sentence = (f'A mamãe patinha foi procurar\nAlém das montanhas\nNa beira do mar\nA mamãe gritou: Quá, quá, quá, quá\nE os {numi} patinhos voltaram de lá')
     elif n == 1:
-        sentence = (f'{n} patinho foi passear \nAlém das montanhas \nPara brincar\nA mamãe gritou: Quá, quá, quá, quá\nMas nenhum patinho voltou de lá')
+        sentence = (f'{num} patinho foi passear \nAlém das montanhas \nPara brincar\nA mamãe gritou: Quá, quá, quá, quá\nMas nenhum patinho voltou de lá')
     elif n == 2:
-        sentence = (f'{n} patinhos foram passear \nAlém das montanhas \nPara brincar\nA mamãe gritou: Quá, quá, quá, quá\nMas só um patinho voltou de lá')
+        sentence = (f'{num} patinhos foram passear \nAlém das montanhas \nPara brincar\nA mamãe gritou: Quá, quá, quá, quá\nMas só um patinho voltou de lá')
     else:
-        sentence = (f'{n} patinhos foram passear \nAlém das montanhas \nPara brincar\nA mamãe gritou: Quá, quá, quá, quá\nMas só {n-1} patinhos voltaram de lá')
+        sentence = (f'{num} patinhos foram passear \nAlém das montanhas \nPara brincar\nA mamãe gritou: Quá, quá, quá, quá\nMas só {num2words(n-1, lang="pt-br")} patinhos voltaram de lá')
     lyrics(sentence)
         
 
