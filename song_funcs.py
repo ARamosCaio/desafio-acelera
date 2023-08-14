@@ -13,7 +13,7 @@ def clean_verse():
 def lyrics(sentence):
     for letter in sentence:
         print(letter, end="")
-        time.sleep(0.06)
+        time.sleep(0.08)
         sys.stdout.flush()
 
 def song(n, ni):
